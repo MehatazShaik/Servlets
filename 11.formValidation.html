@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script language="JavaScript">
+
+function validate_form(){
+	var valid=true;
+	if(document.contact_form.contact_name.value==""){
+		
+		alert("Please fill in the 'your Name'box.");
+		valid=false;
+	}
+	if(document.contact_form.password.value==""){
+		alert("Please fill in the 'password' box.");
+		valid=false;
+	}
+	if((document.contact_form.gender[0].cheecked==false) && (document.contact_form.gender[1].cheecked==false))
+		{
+		alert("Please choose your gender:Male or Female");
+		valid=false;
+		}
+	if(document.contact_form.age.selectedIndex==0){
+		alert("Please select your age: ");
+		valid=false;
+	}
+	if(document.contact_form.terms.checked==false){
+		alert("Please check the terms and condition box.");
+		valid=false;
+	}
+	return valid;
+}
+
+</script>
+</head>
+
+<body bgcolor="#00da00">
+
+<form name="contact_form"method="post"action="https://www.roseindia.net"onsubmit="return vlidate_form();">
+<h1>Please enter your details below</h1>
+
+<p> Your Name:<input type="text" name="contact_name"></p>
+<p> Password:<input type="password" name="password"></p>
+
+<p> Your Gender:<input type="radio" name="gender" value="Male">male
+<input type="radio" name="gender" value="Female">Female</p>
+
+<p>Your Age:
+
+<select name="age">
+<option value="">Please select an option</option>
+<option value="0-18years">0_18years</option>
+<option value="18-30years">18-30years</option>
+
+<option value="30-45years">30-45years</option>
+<option value="45-60years">45-60years</option>
+
+</select>
+<p> do you agree to the terms and conditions?
+<input type="checkbox" name="terms" value="false">
+<p><input type="submit" name="send" value="send details"></p>
+
+
+</form>
+</body>
+</html>
